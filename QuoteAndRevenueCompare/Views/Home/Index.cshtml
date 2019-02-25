@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<div class="ui column one left aligned padded grid stackable">
+    <div class="column">
+        <div class="ui segments">
+            <div class="ui segment">
+                <h5 class="ui header">下载模板和上传
+                </h5>
+            </div>
+            <div class="ui segment">
+                <div class="row">
+                    <button id="down1" type="button" class="btn btn-default">SalesForce template</button>
+                    <button id="down2" type="button" class="btn btn-default">Oracle KiffOff template</button>
+                    <button id="down3" type="button" class="btn btn-default">Oracle Cost template</button>
+                    <button id="down4" type="button" class="btn btn-default">ExchangeRate template</button>
+                     <button id="down5" type="button" class="btn btn-default">Report</button>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label class="control-label">Select resume excel to import</label>
+                        <input type="file" name="uploadfile" id="btn_import" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="ui segment">
+            <div id="toolbar" class="btn-group" style="float: left">
+            </div>
+
+            <div class="table-responsive" style="clear: both">
+                <table data-bind="myBootstrapTable: $root" class="table table-striped table-primary mb30 table-hover" id="table" cellspacing="0" style="width: 100%;">
+                </table>
+
+            </div>
+        </div>
+        >
+    </div>
+</div>
+
+<div class="modal fade" id="ViewModal" tabindex="-1" role="dialog" aria-labelledby="">
+    @{
+        Html.RenderPartial("ViewModal");
+    }
+</div>
+<script src="~/Javascript/BusinessJs/Import.js"></script>
+<script type="text/javascript">
+    $('#down1').click(function () {
+        window.location.href = '/DownloadTemplate/DownloadSalesForceTemplate';
+    });
+    $('#down2').click(function () {
+        window.location.href = '/DownloadTemplate/DownloadOracleKickOffTemplate';
+    });
+    $('#down3').click(function () {
+        window.location.href = '/DownloadTemplate/DownloadOracleCost';
+    });
+    $('#down4').click(function () {
+        window.location.href = '/DownloadTemplate/DownloadExchangeRateTemplate';
+    });
+    $('#down5').click(function () {
+        window.location.href = '/DownloadTemplate/DownloadReport';
+    });
+</script>
